@@ -36,6 +36,10 @@ void PartialDetector::imageCallback(
     const sensor_msgs::ImageConstPtr& image_rect,
     const sensor_msgs::CameraInfoConstPtr& camera_info) {
     // Lazy updates:
+    // When the camera stream is IR skip detection
+    if (this->is_ir)
+        return;
+
     // When there are no subscribers _and_ when tf is not published,
     // skip detection.
     if (tag_detections_publisher_.getNumSubscribers() == 0 &&

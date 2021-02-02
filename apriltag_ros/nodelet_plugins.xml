@@ -7,3 +7,13 @@
 		</description>
 	</class>
 </library>
+
+<library path="lib/libapriltag_ros_partial_detector">
+    <class name="apriltag_ros/PartialDetector"
+        type="apriltag_ros::PartialDetector"
+		base_class_type="nodelet::Nodelet">
+		<description>
+          Partial AprilTag 3 detector
+		</description>
+	</class>
+</library>
